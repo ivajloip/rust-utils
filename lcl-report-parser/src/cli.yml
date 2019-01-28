@@ -1,0 +1,26 @@
+name: lcl-report-parser
+version: "1.0"
+author: Ivaylo Petrov ivajloip@gmail.com
+about: Parses LCL reports and transforms them to other formats
+args:
+    - auto-tag-file:
+        short: a
+        long: auto-file
+        value_name: FILE
+        help: File to used for auto-tagging
+        takes_value: true
+subcommands:
+    - txt-to-csv:
+        about: Parses txt report obtained from `pdftotext -layout <lcl.pdf>` and produces a CSV file.
+        args:
+            - config:
+                short: f
+                long: file
+                value_name: FILE
+                help: File to be parsed
+                required: true
+                takes_value: true
+            - verbose:
+                short: v
+                multiple: true
+                help: Sets the level of verbosity
